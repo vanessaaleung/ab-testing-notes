@@ -1,10 +1,10 @@
 # A/B Testing Course
 Notes for the A/B Testing course by Google
 
-## Overview
+## [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
 - When can you use A/B testing?
 
-## Metric Choice
+## [Metric Choice](https://github.com/vanessaaleung/ab-testing-notes/blob/master/metric-choice.md)
 - Customer Funnel
 - Click-Through-Rate (CTR) vs Click-Through-Probability
 - Invariant Checking
@@ -16,7 +16,7 @@ Notes for the A/B Testing course by Google
 - Summary Metrics
 - Sensitivity  vs Robustness
 
-## Statistics
+## [Statistics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/statistics.md)
 - Binomial Distribution
 - Confidence Interval
 - Margin of Error
@@ -28,13 +28,13 @@ Notes for the A/B Testing course by Google
 - Variability
 - Non-parametric Methods
 
-## Design
+## [Design](https://github.com/vanessaaleung/ab-testing-notes/blob/master/metric-choice.md)
 - Sample Size Calculator
 - Example
 
-## Analyze
+## [Analyze](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyze.md)
 - Example
 
-## Ethics
+## [Ethics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/ethics.md)
 
 
