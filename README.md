@@ -1,5 +1,11 @@
 # A/B Testing Course
 Notes for the A/B Testing course by Google
+1. [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
+2. [Metric Choice](https://github.com/vanessaaleung/ab-testing-notes/blob/master/metric-choice.md)
+3. [Statistics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/statistics.md)
+4. [Design](https://github.com/vanessaaleung/ab-testing-notes/blob/master/design.md)
+5. [Analyzing Results](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyzing-results.md)
+6. [Ethics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/ethics.md)
 
 ## [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
 - When can you use A/B testing?
@@ -28,11 +34,11 @@ Notes for the A/B Testing course by Google
 - Variability
 - Non-parametric Methods
 
-## [Design](https://github.com/vanessaaleung/ab-testing-notes/blob/master/metric-choice.md)
+## [Design](https://github.com/vanessaaleung/ab-testing-notes/blob/master/design.md)
 - Sample Size Calculator
 - Example
 
-## [Analyze](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyze.md)
+## [Analyzing Results](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyzing-results.md)
 - Example
 
 ## [Ethics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/ethics.md)
