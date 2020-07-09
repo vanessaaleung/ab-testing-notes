@@ -39,7 +39,11 @@ Notes for the A/B Testing course by Google
 - Example
 
 ## [Analyzing Results](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyzing-results.md)
-- Example
+- Sanity Checks
+- Single Metric Evaluation
+- Simpson’s paradox
+- Multiple Metrics
+- Disappearing Launch Effect
 
 ## [Ethics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/ethics.md)
 
