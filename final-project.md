@@ -1,6 +1,11 @@
 # Final Project - Free Trial Screener
+## Table of Contents
+1. [Overview](#overview)
+2. [Metric Choice](#metric-choice)
+3. [Measuring Variability](#measuring-variability)
+4. [Sizing](#sizing)
 
-## Experiment Overview
+## Overview
 
 At the time of this experiment, Udacity courses currently have two options on the course overview page: **"start free trial"**, and **"access course materials"**. 
 If the student clicks "start free trial", they will be asked to enter their credit card information, and then they will be enrolled in a free trial for the paid version of the course. After 14 days, they will automatically be charged unless they cancel first. If the student clicks "access course materials", they will be able to view the videos and take the quizzes for free, but they will not receive coaching support or a verified certificate, and they will not submit their final project for feedback.
@@ -20,14 +25,13 @@ The **unit of diversion** is a **cookie**, although if the student **enrolls** i
 The same user-id cannot enroll in the free trial twice. 
 For users that do not enroll, their user-id is not tracked in the experiment, even if they were signed in when they visited the course overview page.
 
-## Experiment Design
-### Metric Choice
+## Metric Choice
 - The practical significance boundary for each metric, that is, the difference that would have to be observed before that was a meaningful change for the business, is given in parentheses. 
 - All practical significance boundaries are given as absolute changes.
 - Any place "unique cookies" are mentioned, the uniqueness is determined by day. 
 - User-ids are automatically unique since the site does not allow the same user-id to enroll twice.
 
-#### Invariant Metric
+### Invariant Metric
 _Metrics that shouldn’t change across experiment and control_
 1. **Number of cookies:** 
 The number of unique cookies to view the course overview page. (d<sub>min</sub>=3000)
@@ -36,14 +40,18 @@ The number of unique cookies to click the "Start free trial" button (which happe
 3. **Click-through-probability:** 
 The number of unique cookies to click the "Start free trial" button divided by number of unique cookies to view the course overview page. (d<sub>min</sub>=0.01)
 
-#### Evalution Metrics
+### Evalution Metrics
 1. **Gross conversion:** 
 The number of user-ids to complete checkout and enroll in the free trial divided by number of unique cookies to click the "Start free trial" button. (d<sub>min</sub>= 0.01)
 
 2. **Net conversion:** 
 The number of user-ids to remain enrolled past the 14-day boundary (and thus make at least one payment) divided by the number of unique cookies to click the "Start free trial" button. (d<sub>min</sub>= 0.0075)
 
-### Measuring Variability
+## Measuring Variability
+_Given a sample size of 5,000 cookies visiting the course overview page_
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" title="\text{Estimate Standard Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" /></a>
+
 The rough estimates of the baseline values for these metrics:
 <table>
 <tr>
@@ -75,25 +83,32 @@ The rough estimates of the baseline values for these metrics:
 <td>0.1093125</td>
 </tr>
 </table>
- 
 
-For each metric you selected as an evaluation metric, estimate its standard deviation analytically. Do you expect the analytic estimates to be accurate? That is, for which metrics, if any, would you want to collect an empirical estimate of the variability if you had time?
+### Gross Conversion
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{N}=\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{N}=\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}" title="\text{N}=\text{\# unique cookies to click the Start Free Trial Button}" /></a>
 
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{rough&space;estimate&space;of&space;unique&space;cookies&space;to&space;click&space;the&space;button}}{\text{rough&space;estimate&space;of&space;unique&space;cookies&space;to&space;view&space;the&space;page}}\times{\text{\&hash;&space;sample&space;of&space;unique&space;cookies&space;to&space;view&space;the&space;course&space;page}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=\frac{\text{rough&space;estimate&space;of&space;unique&space;cookies&space;to&space;click&space;the&space;button}}{\text{rough&space;estimate&space;of&space;unique&space;cookies&space;to&space;view&space;the&space;page}}\times{\text{\&hash;&space;sample&space;of&space;unique&space;cookies&space;to&space;view&space;the&space;course&space;page}}" title="=\frac{\text{rough estimate of unique cookies to click the button}}{\text{rough estimate of unique cookies to view the page}}\times{\text{\# sample of unique cookies to view the course page}}" /></a>
 
-### Sizing
-#### Choosing Number of Samples given Power
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;=\frac{3,200}{40,000}\times5,000=400" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=\frac{3,200}{40,000}\times5,000=400" title="=\frac{3,200}{40,000}\times5,000=400" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{0.20625\times(1-0.20625))}{400}}=0.0202" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{0.20625\times(1-0.20625))}{400}}=0.0202" title="\text{Estimate Standard Deviation}=\sqrt{\frac{0.20625\times(1-0.20625))}{400}}=0.0202" /></a>
+
+### Net Conversion
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{0.1093125\times(1-0.1093125))}{400}}=0.0156" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{0.1093125\times(1-0.1093125))}{400}}=0.0156" title="\text{Estimate Standard Deviation}=\sqrt{\frac{0.1093125\times(1-0.1093125))}{400}}=0.0156" /></a>
+
+## Sizing
+### Choosing Number of Samples given Power
 Use an alpha of 0.05 and a beta of 0.2.
 
 
-
-#### Choosing Duration vs. Exposure
+### Choosing Duration vs. Exposure
 
 What percentage of Udacity's traffic would you divert to this experiment (assuming there were no other experiments you wanted to run simultaneously)? Is the change risky enough that you wouldn't want to run on all traffic?
 
 Given the percentage you chose, how long would the experiment take to run, using the analytic estimates of variance? If the answer is longer than a few weeks, then this is unreasonably long, and you should reconsider an earlier decision.
 
 
-## **Analysis**
+## Analysis
 
 The data for you to analyze is [here](https://docs.google.com/a/knowlabs.com/spreadsheets/d/1Mu5u9GrybDdska-ljPXyBjTpdZIUev_6i7t4LRDfXM8/edit#gid=0). This data contains the raw information needed to compute the above metrics, broken down day by day. Note that there are two sheets within the spreadsheet - one for the experiment group, and one for the control group.
 
@@ -131,7 +146,7 @@ For each evaluation metric, do a sign test using the day-by-day breakdown. If th
 Finally, make a recommendation. Would you launch this experiment, not launch it, dig deeper, run a follow-up experiment, or is it a judgment call? If you would dig deeper, explain what area you would investigate. If you would run follow-up experiments, briefIy describe that experiment. If it is a judgment call, explain what factors would be relevant to the decision.
 
 
-## **Follow-Up Experiment: How to Reduce Early Cancellations**
+## Follow-Up Experiment: How to Reduce Early Cancellations
 
 If you wanted to reduce the number of frustrated students who cancel early in the course, what experiment would you try? Give a brief description of the change you would make, what your hypothesis would be about the effect of the change, what metrics you would want to measure, and what unit of diversion you would use. Include an explanation of each of your choices.
 
