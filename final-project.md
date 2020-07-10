@@ -48,7 +48,7 @@ The number of user-ids to complete checkout and enroll in the free trial divided
 The number of user-ids to remain enrolled past the 14-day boundary (and thus make at least one payment) divided by the number of unique cookies to click the "Start free trial" button. (d<sub>min</sub>= 0.0075)
 
 ## Measuring Variability
-_Given a sample size of 5,000 cookies visiting the course overview page_
+_For each evaluation metric, estimate its standard deviation analytically, given a sample size of 5,000 cookies visiting the course overview page_
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Estimate&space;Standard&space;Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" title="\text{Estimate Standard Deviation}=\sqrt{\frac{\hat{P}(1-\hat{P})}{N}}" /></a>
 
@@ -98,15 +98,32 @@ The rough estimates of the baseline values for these metrics:
 
 ## Sizing
 ### Choosing Number of Samples given Power
-Use an alpha of 0.05 and a beta of 0.2.
+_How many pageviews total (across both groups) would be needed to collect given an alpha of 0.05 and a beta of 0.2_
+
+- Bonferroni Correction: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" title="\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" /></a>
+
+#### Gross Conversion
+- Minimum Detectable Effect:  0.01
+- Baseline conversion rate: 0.20625
+- Sample Size:&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{33,014&plus;29,844}{2}=31,429" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{33,014&plus;29,844}{2}=31,429" title="\frac{33,014+29,844}{2}=31,429" /></a>&nbsp;&nbsp;per group
+
+#### Net Conversion
+- Minimum Detectable Effect:  0.0075
+- Baseline conversion rate: 0.1093125
+- Sample Size:&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{35,016&space;&plus;&space;31,660}{2}=33,338" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{35,016&space;&plus;&space;31,660}{2}=33,338" title="\frac{35,016 + 31,660}{2}=33,338" /></a>&nbsp;&nbsp;per group
+
+#### Page View Needed
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;33,338\times2\div\frac{3,200}{40,000}=833,450" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;33,338\times2\div\frac{3,200}{40,000}=833,450" title="33,338\times2\div\frac{3,200}{40,000}=833,450" /></a>
 
 
 ### Choosing Duration vs. Exposure
+#### Exposure
+As the change is not risky, 100% of Udacity's traffic would be diverted to this experiment, assuming there were no other experiments running simultaneously.
 
-What percentage of Udacity's traffic would you divert to this experiment (assuming there were no other experiments you wanted to run simultaneously)? Is the change risky enough that you wouldn't want to run on all traffic?
+#### Duration
+_How long would the experiment take to run_
 
-Given the percentage you chose, how long would the experiment take to run, using the analytic estimates of variance? If the answer is longer than a few weeks, then this is unreasonably long, and you should reconsider an earlier decision.
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Duration}=\frac{\text{833,450&space;page&space;views&space;needed}}{\text{estimate&space;of&space;40,000&space;page&space;views&space;per&space;day}}\approx&space;21\text{days}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Duration}=\frac{\text{833,450&space;page&space;views&space;needed}}{\text{estimate&space;of&space;40,000&space;page&space;views&space;per&space;day}}\approx&space;21\text{days}" title="\text{Duration}=\frac{\text{833,450 page views needed}}{\text{estimate of 40,000 page views per day}}\approx 21\text{days}" /></a>
 
 ## Analysis
 
