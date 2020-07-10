@@ -1,4 +1,4 @@
-# Final Project - Free Trial Screener
+# A/B Testing Project - Udacity Free Trial Screener
 ## Table of Contents
 1. [Overview](#overview)
 2. [Metric Choice](#metric-choice)
@@ -126,24 +126,39 @@ _How long would the experiment take to run_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Duration}=\frac{\text{833,450&space;page&space;views&space;needed}}{\text{estimate&space;of&space;40,000&space;page&space;views&space;per&space;day}}\approx&space;21\text{days}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Duration}=\frac{\text{833,450&space;page&space;views&space;needed}}{\text{estimate&space;of&space;40,000&space;page&space;views&space;per&space;day}}\approx&space;21\text{days}" title="\text{Duration}=\frac{\text{833,450 page views needed}}{\text{estimate of 40,000 page views per day}}\approx 21\text{days}" /></a>
 
 ## Analysis
-
-The data for you to analyze is [here](https://docs.google.com/a/knowlabs.com/spreadsheets/d/1Mu5u9GrybDdska-ljPXyBjTpdZIUev_6i7t4LRDfXM8/edit#gid=0). This data contains the raw information needed to compute the above metrics, broken down day by day. Note that there are two sheets within the spreadsheet - one for the experiment group, and one for the control group.
-
-The meaning of each column is:
-
-
-
-1. **Pageviews:** Number of unique cookies to view the course overview page that day.
-2. **Clicks: **Number of unique cookies to click the course overview page that day.
-3. **Enrollments: **Number of user-ids to enroll in the free trial that day.
-4. **Payments:** Number of user-ids who who enrolled on that day to remain enrolled for 14 days and thus make a payment. (Note that the date for this column is the start date, that is, the date of enrollment, rather than the date of the payment. The payment happened 14 days later. Because of this, the enrollments and payments are tracked for 14 fewer days than the other columns.)
-
+The data for you to analyze is [here](https://docs.google.com/a/knowlabs.com/spreadsheets/d/1Mu5u9GrybDdska-ljPXyBjTpdZIUev_6i7t4LRDfXM8/edit#gid=0).
 
 ### Sanity Checks
+_Checking whether the invariant metrics are equivalent between the two groups_
 
-Start by checking whether your invariant metrics are equivalent between the two groups. If the invariant metric is a simple count that should be randomly split between the 2 groups, you can use a binomial test as demonstrated in Lesson 5. Otherwise, you will need to construct a confidence interval for a difference in proportions using a similar strategy as in Lesson 1, then check whether the difference between group values falls within that confidence level.
+- If the invariant metric is a simple count that should be randomly split between the 2 groups, use a binomial test. 
+- Otherwise, construct a confidence interval for a difference in proportions, then check whether the difference between group values falls within that confidence level.
 
-If your sanity checks fail, look at the day by day data and see if you can offer any insight into what is causing the problem.
+#### Number of cookies
+- Total cookies in control: 345,543
+- Total cookies in experiment: 344,660
+- Standard Error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" title="\sqrt{\frac{0.5\times0.5}{345,543+344,660}}=0.0006" /></a>
+- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{SD}\times1.96=0.0012" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{SD}\times1.96=0.0012" title="\text{SD}\times1.96=0.0012" /></a>
+- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[0.4988,&space;0.5012]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[0.4988,&space;0.5012]" title="[0.4988, 0.5012]" /></a>
+- Observed fraction:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" title="\hat{\beta}=\frac{28,378}{28,378+28,325}=0.5005" /></a>
+- Observed fraction is within the CI - passed the check
+
+#### Net Conversion
+- Total clicks in control: 28,378
+- Total cookies in experiment: 28,325
+- Standard Error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" title="\sqrt{\frac{0.5\times0.5}{28,378+28,325}}=0.0021" /></a>
+- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{SD}\times1.96=0.0041" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{SD}\times1.96=0.0041" title="\text{SD}\times1.96=0.0041" /></a>
+- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[0.4959,&space;0.5041]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[0.4959,&space;0.5041]" title="[0.4959, 0.5041]" /></a>
+- Observed fraction:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" title="\hat{\beta}=\frac{28,378}{38,278+28,325}=0.5005" /></a>
+- Observed fraction is within the CI - passed the check
+
+#### Click-through-probability
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{P_{pool}}=\frac{X_{control}&plus;X_{experiment}}{N_{control}&plus;N_{experiment}}=\frac{28,378&plus;28,325}{345,543&plus;344,660}=0.0822" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{P_{pool}}=\frac{X_{control}&plus;X_{experiment}}{N_{control}&plus;N_{experiment}}=\frac{28,378&plus;28,325}{345,543&plus;344,660}=0.0822" title="\hat{P_{pool}}=\frac{X_{control}+X_{experiment}}{N_{control}+N_{experiment}}=\frac{28,378+28,325}{345,543+344,660}=0.0822" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{experiment}})}=0.0007" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{experiment}})}=0.0007" title="SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}+\frac{1}{N_{experiment}})}=0.0007" /></a>
+- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;SE_{pool}\times1.96=0.0013" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;SE_{pool}\times1.96=0.0013" title="SE_{pool}\times1.96=0.0013" /></a>
+- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[-0.0013,&space;0.0013]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[-0.0013,&space;0.0013]" title="[-0.0013, 0.0013]" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" title="\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" /></a>
+- Observed difference is within the CI - passed the check
 
 
 ### Check for Practical and Statistical Significance
