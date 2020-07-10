@@ -2,8 +2,18 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [Metric Choice](#metric-choice)
+   - [Invariant Metrics](#invariant-metrics)
+   - [Evaluation Metrics](#evaluation-metrics)
 3. [Measuring Variability](#measuring-variability)
+   - [Gross conversion](#gross-conversion)
+   - [Net conversion](#net-conversion)
 4. [Sizing](#sizing)
+   - [Choosing Number of Samples given Power](#choosing-number-of-samples-given-power)
+   - [Choosing Duration vs. Exposure](#choosing-duration-vs-exposure)
+5. [Analysis](#analysis)
+   - [Sanity Checks](#sanity-checks)
+   - [Effect Size Tests](#effect-size-tests)
+   - [Run Sign Tests](#run-sign-tests)
 
 ## Overview
 
@@ -31,21 +41,21 @@ For users that do not enroll, their user-id is not tracked in the experiment, ev
 - Any place "unique cookies" are mentioned, the uniqueness is determined by day. 
 - User-ids are automatically unique since the site does not allow the same user-id to enroll twice.
 
-### Invariant Metric
+### Invariant Metrics
 _Metrics that shouldn’t change across experiment and control_
 1. **Number of cookies:** 
-The number of unique cookies to view the course overview page. (d<sub>min</sub>=3000)
+#unique cookies to view the course overview page. (d<sub>min</sub>=3000)
 2. **Number of clicks:** 
-The number of unique cookies to click the "Start free trial" button (which happens before the free trial screener is trigger). (d<sub>min</sub>=240)
+#unique cookies to click the "Start free trial" button (which happens before the free trial screener is trigger). (d<sub>min</sub>=240)
 3. **Click-through-probability:** 
-The number of unique cookies to click the "Start free trial" button divided by number of unique cookies to view the course overview page. (d<sub>min</sub>=0.01)
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}{\text{\&hash;&space;unique&space;cookies&space;to&space;view&space;the&space;course&space;overview&space;page}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}{\text{\&hash;&space;unique&space;cookies&space;to&space;view&space;the&space;course&space;overview&space;page}}" title="\frac{\text{\# unique cookies to click the Start Free Trial Button}}{\text{\# unique cookies to view the course overview page}}" /></a> (d<sub>min</sub>=0.01)
 
-### Evalution Metrics
+### Evaluation Metrics
 1. **Gross conversion:** 
-The number of user-ids to complete checkout and enroll in the free trial divided by number of unique cookies to click the "Start free trial" button. (d<sub>min</sub>= 0.01)
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{\&hash;&space;user-ids&space;to&space;complete&space;checkout&space;and&space;enroll&space;in&space;the&space;free&space;trial}}{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{\&hash;&space;user-ids&space;to&space;complete&space;checkout&space;and&space;enroll&space;in&space;the&space;free&space;trial}}{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}" title="\frac{\text{\# user-ids to complete checkout and enroll in the free trial}}{\text{\# unique cookies to click the Start Free Trial Button}}" /></a>(d<sub>min</sub>= 0.01)
 
 2. **Net conversion:** 
-The number of user-ids to remain enrolled past the 14-day boundary (and thus make at least one payment) divided by the number of unique cookies to click the "Start free trial" button. (d<sub>min</sub>= 0.0075)
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{\&hash;&space;user-ids&space;to&space;remain&space;enrolled&space;past&space;the&space;14-day&space;boundary}}{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{\&hash;&space;user-ids&space;to&space;remain&space;enrolled&space;past&space;the&space;14-day&space;boundary}}{\text{\&hash;&space;unique&space;cookies&space;to&space;click&space;the&space;Start&space;Free&space;Trial&space;Button}}" title="\frac{\text{\# user-ids to remain enrolled past the 14-day boundary}}{\text{\# unique cookies to click the Start Free Trial Button}}" /></a> (d<sub>min</sub>= 0.0075)
 
 ## Measuring Variability
 _For each evaluation metric, estimate its standard deviation analytically, given a sample size of 5,000 cookies visiting the course overview page_
@@ -115,7 +125,6 @@ _How many pageviews total (across both groups) would be needed to collect given 
 #### Page View Needed
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;33,338\times2\div\frac{3,200}{40,000}=833,450" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;33,338\times2\div\frac{3,200}{40,000}=833,450" title="33,338\times2\div\frac{3,200}{40,000}=833,450" /></a>
 
-
 ### Choosing Duration vs. Exposure
 #### Exposure
 As the change is not risky, 100% of Udacity's traffic would be diverted to this experiment, assuming there were no other experiments running simultaneously.
@@ -167,7 +176,7 @@ _Checking whether the invariant metrics are equivalent between the two groups_
 |Number of Clicks|0.4959|0.5041|0.5005|✓|
 |Click-through-probability|-0.0013|0.0013|0.0001|✓|
 
-### Check for Practical and Statistical Significance
+### Effect Size Tests
 _Calculate a confidence interval for the difference between the experiment and control groups, and check whether each metric is statistically and/or practically significance_
 
 #### Significance definitions
@@ -216,18 +225,13 @@ _Perform sign test using the day-by-day breakdown to see if it agree with the co
 - The two-tail P value is 0.6776, which is the chance of observing either 13 or more successes, or 10 or fewer successes, in 23 trials
 - p-value > 0.025, not significant
 
-### Summary
+#### Summary
 |Metric|p-value|Statistical Significance|
 |---|---|---|
 |Gross Conversion|0.0026|✓|
 |Net Conversion|0.6776|╳|
 
 ### Make a Recommendation
+Launch the experiment
 
-Finally, make a recommendation. Would you launch this experiment, not launch it, dig deeper, run a follow-up experiment, or is it a judgment call? If you would dig deeper, explain what area you would investigate. If you would run follow-up experiments, briefIy describe that experiment. If it is a judgment call, explain what factors would be relevant to the decision.
-
-
-## Follow-Up Experiment: How to Reduce Early Cancellations
-
-If you wanted to reduce the number of frustrated students who cancel early in the course, what experiment would you try? Give a brief description of the change you would make, what your hypothesis would be about the effect of the change, what metrics you would want to measure, and what unit of diversion you would use. Include an explanation of each of your choices.
 
