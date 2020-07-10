@@ -195,11 +195,59 @@ _Checking whether the invariant metrics are equivalent between the two groups_
 </table>
 
 ### Check for Practical and Statistical Significance
+_Calculate a confidence interval for the difference between the experiment and control groups, and check whether each metric is statistically and/or practically significance_
 
-Next, for your evaluation metrics, calculate a confidence interval for the difference between the experiment and control groups, and check whether each metric is statistically and/or practically significance. A metric is statistically significant if the confidence interval does not include 0 (that is, you can be confident there was a change), and it is practically significant if the confidence interval does not include the practical significance boundary (that is, you can be confident there is a change that matters to the business.)
+#### Significance definitions
+A metric is statistically significant if the confidence interval does not include 0, that is, you can be confident there was a change. And it is practically significant if the confidence interval does not include the practical significance boundary, that is, you can be confident there is a change that matters to the business.
 
-If you have chosen multiple evaluation metrics, you will need to decide whether to use the Bonferroni correction. When deciding, keep in mind the results you are looking for in order to launch the experiment. Will the fact that you have multiple metrics make those results more likely to occur by chance than the alpha level of 0.05?
+- Bonferroni Correction: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" title="\alpha_{individual}=\frac{\alpha_{overall}}{2}=0.025" /></a>
 
+#### Gross conversion
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{3,423}{17,260}-\frac{3,785}{17,293}=-0.0206" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{3,423}{17,260}-\frac{3,785}{17,293}=-0.0206" title="\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{3,423}{17,260}-\frac{3,785}{17,293}=-0.0206" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\hat{P_{pool}}=\frac{X_{control}&plus;X_{exp}}{N_{control}&plus;N_{exp}}=\frac{3,423&plus;3,785}{17,260&plus;17,293}=0.2086" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\hat{P_{pool}}=\frac{X_{control}&plus;X_{exp}}{N_{control}&plus;N_{exp}}=\frac{3,423&plus;3,785}{17,260&plus;17,293}=0.2086" title="\hat{P_{pool}}=\frac{X_{control}+X_{exp}}{N_{control}+N_{exp}}=\frac{3,423+3,785}{17,260+17,293}=0.2086" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{exp}})}=0.0044" target="_blank"><img src="https://latex.codecogs.com/svg.latex?SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{exp}})}=0.0044" title="SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}+\frac{1}{N_{exp}})}=0.0044" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\text{Margin&space;of&space;error}=SE_{pool}\times2.24=0.0098" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\text{Margin&space;of&space;error}=SE_{pool}\times2.24=0.0098" title="\text{Margin of error}=SE_{pool}\times2.24=0.0098" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\text{Confidence&space;Interval}=[-0.0303,&space;-0.0108]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\text{Confidence&space;Interval}=[-0.0303,&space;-0.0108]" title="\text{Confidence Interval}=[-0.0303, -0.0108]" /></a>
+- CI does not includes 0 - statistically significant
+- CI does not include d<sub>min</sub>= - 0.01, practical significant
+
+#### Net conversion
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{1,945}{17,260}-\frac{2,033}{17,293}=-0.0049" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{1,945}{17,260}-\frac{2,033}{17,293}=-0.0049" title="\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{1,945}{17,260}-\frac{2,033}{17,293}=-0.0049" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\hat{P_{pool}}=\frac{X_{control}&plus;X_{exp}}{N_{control}&plus;N_{exp}}=\frac{1,945&plus;2,033}{17,260&plus;17,293}=0.1151" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\hat{P_{pool}}=\frac{X_{control}&plus;X_{exp}}{N_{control}&plus;N_{exp}}=\frac{1,945&plus;2,033}{17,260&plus;17,293}=0.1151" title="\hat{P_{pool}}=\frac{X_{control}+X_{exp}}{N_{control}+N_{exp}}=\frac{1,945+2,033}{17,260+17,293}=0.1151" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{exp}})}=0.0034" target="_blank"><img src="https://latex.codecogs.com/svg.latex?SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{exp}})}=0.0034" title="SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}+\frac{1}{N_{exp}})}=0.0034" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\text{Margin&space;of&space;error}=SE_{pool}\times2.24=0.0077" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\text{Margin&space;of&space;error}=SE_{pool}\times2.24=0.0077" title="\text{Margin of error}=SE_{pool}\times2.24=0.0077" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\text{Confidence&space;Interval}=[-0.0126,&space;0.0028]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\text{Confidence&space;Interval}=[-0.0126,&space;0.0028]" title="\text{Confidence Interval}=[-0.0126, 0.0028]" /></a>
+- CI includes 0 - not significant
+- CI includes d<sub>min</sub>= - 0.0075, not practical significant
+
+#### Summary
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Lower Bound</th>
+      <th>Upper Bound</th>
+      <th>Statistical Significance</th>
+      <th>Practical Significance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>Gross Conversion</td>
+     <td>-0.0303</p></td>
+     <td>-0.0108</td>
+     <td>✓</td>
+     <td>✓</td>
+    </tr>
+    <tr>
+     <td>Net Conversion</td>
+     <td>-0.0126</td>
+     <td>0.0028</td>
+     <td>╳</td>
+     <td>╳</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Run Sign Tests
 
