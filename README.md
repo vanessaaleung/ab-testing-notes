@@ -6,6 +6,7 @@ Notes for the A/B Testing course by Google
 4. [Design](https://github.com/vanessaaleung/ab-testing-notes/blob/master/design.md)
 5. [Analyzing Results](https://github.com/vanessaaleung/ab-testing-notes/blob/master/analyzing-results.md)
 6. [Ethics](https://github.com/vanessaaleung/ab-testing-notes/blob/master/ethics.md)
+7. [Final Project](https://github.com/vanessaaleung/ab-testing-notes/blob/master/final-project.md)
 
 ## [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
 - When can you use A/B testing?
