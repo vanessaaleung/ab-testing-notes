@@ -161,38 +161,11 @@ _Checking whether the invariant metrics are equivalent between the two groups_
 - Observed difference is within the CI - passed the check
 
 #### Summary
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>Lower Bound</th>
-      <th>Upper Bound</th>
-      <th>Observed</th>
-      <th>Passes</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>Number of Cookies</td>
-    <td><p style="text-align: right">0.4988</p></td>
-    <td><p style="text-align: right">0.5012</p></td>
-    <td><p style="text-align: right">0.5006</p></td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>Number of Clicks</td>
-    <td><p style="text-align: right">0.4959</p></td>
-    <td><p style="text-align: right">0.5041</p></td>
-    <td><p style="text-align: right">0.5005</p></td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>Click-through-probability</td>
-    <td><p style="text-align: right">-0.0013</p></td>
-    <td><p style="text-align: right">0.0013</p></td>
-    <td><p style="text-align: right">0.0001</p></td>
-    <td>✓</td>
-  </tr>
-</table>
+|Metric|Lower Bound|Upper Bound|Observed|Passes|
+|---|---|---|---|---|
+|Number of Cookies|0.4988|0.5012|0.5006|✓|
+|Number of Clicks|0.4959|0.5041|0.5005|✓|
+|Click-through-probability|-0.0013|0.0013|0.0001|✓|
 
 ### Check for Practical and Statistical Significance
 _Calculate a confidence interval for the difference between the experiment and control groups, and check whether each metric is statistically and/or practically significance_
@@ -221,38 +194,33 @@ A metric is statistically significant if the confidence interval does not includ
 - CI includes d<sub>min</sub>= - 0.0075, not practical significant
 
 #### Summary
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>Lower Bound</th>
-      <th>Upper Bound</th>
-      <th>Statistical Significance</th>
-      <th>Practical Significance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     <td>Gross Conversion</td>
-     <td>-0.0303</p></td>
-     <td>-0.0108</td>
-     <td>✓</td>
-     <td>✓</td>
-    </tr>
-    <tr>
-     <td>Net Conversion</td>
-     <td>-0.0126</td>
-     <td>0.0028</td>
-     <td>╳</td>
-     <td>╳</td>
-    </tr>
-  </tbody>
-</table>
+|Metric|Lower Bound|Upper Bound|Statistical Significance|Practical Significance|
+|---|---|---|---|---|
+|Gross Conversion|-0.0303|-0.0108|✓|✓|
+|Net Conversion|-0.0126|0.0028|╳|╳|
 
 ### Run Sign Tests
+_Perform sign test using the day-by-day breakdown to see if it agree with the confidence interval for the difference_
 
-For each evaluation metric, do a sign test using the day-by-day breakdown. If the sign test does not agree with the confidence interval for the difference, see if you can figure out why.
+- [Online Calculator for Sign and binomial test](https://www.graphpad.com/quickcalcs/binomial1.cfm)
 
+#### Gross conversion
+- #days: 23
+- #days with positive change: 19
+- The two-tail P value is 0.0026, which is the chance of observing either 19 or more successes, or 4 or fewer successes, in 23 trials
+- p-value < 0.025, statistically significant
+ 
+#### Net conversion
+- #days: 23
+- #days with positive change: 13
+- The two-tail P value is 0.6776, which is the chance of observing either 13 or more successes, or 10 or fewer successes, in 23 trials
+- p-value > 0.025, not significant
+
+### Summary
+|Metric|p-value|Statistical Significance|
+|---|---|---|
+|Gross Conversion|0.0026|✓|
+|Net Conversion|0.6776|╳|
 
 ### Make a Recommendation
 
