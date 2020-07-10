@@ -137,29 +137,62 @@ _Checking whether the invariant metrics are equivalent between the two groups_
 #### Number of cookies
 - Total cookies in control: 345,543
 - Total cookies in experiment: 344,660
-- Standard Error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" title="\sqrt{\frac{0.5\times0.5}{345,543+344,660}}=0.0006" /></a>
-- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{SD}\times1.96=0.0012" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{SD}\times1.96=0.0012" title="\text{SD}\times1.96=0.0012" /></a>
-- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[0.4988,&space;0.5012]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[0.4988,&space;0.5012]" title="[0.4988, 0.5012]" /></a>
-- Observed fraction:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" title="\hat{\beta}=\frac{28,378}{28,378+28,325}=0.5005" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Standard&space;Error}=\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Standard&space;Error}=\sqrt{\frac{0.5\times0.5}{345,543&plus;344,660}}=0.0006" title="\text{Standard Error}=\sqrt{\frac{0.5\times0.5}{345,543+344,660}}=0.0006" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Margin&space;of&space;error}=\text{SD}\times1.96=0.0012" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Margin&space;of&space;error}=\text{SD}\times1.96=0.0012" title="\text{Margin of error}=\text{SD}\times1.96=0.0012" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Confidence&space;Interval}=[0.4988,&space;0.5012]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Confidence&space;Interval}=[0.4988,&space;0.5012]" title="\text{Confidence Interval}=[0.4988, 0.5012]" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Observed&space;fraction}=\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Observed&space;fraction}=\hat{\beta}=\frac{28,378}{28,378&plus;28,325}=0.5005" title="\text{Observed fraction}=\hat{\beta}=\frac{28,378}{28,378+28,325}=0.5005" /></a>
 - Observed fraction is within the CI - passed the check
 
 #### Net Conversion
 - Total clicks in control: 28,378
 - Total cookies in experiment: 28,325
-- Standard Error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" title="\sqrt{\frac{0.5\times0.5}{28,378+28,325}}=0.0021" /></a>
-- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{SD}\times1.96=0.0041" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{SD}\times1.96=0.0041" title="\text{SD}\times1.96=0.0041" /></a>
-- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[0.4959,&space;0.5041]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[0.4959,&space;0.5041]" title="[0.4959, 0.5041]" /></a>
-- Observed fraction:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" title="\hat{\beta}=\frac{28,378}{38,278+28,325}=0.5005" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Standard&space;Error}=\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Standard&space;Error}=\sqrt{\frac{0.5\times0.5}{28,378&plus;28,325}}=0.0021" title="\text{Standard Error}=\sqrt{\frac{0.5\times0.5}{28,378+28,325}}=0.0021" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Margin&space;of&space;error}=\text{SD}\times1.96=0.0041" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Margin&space;of&space;error}=\text{SD}\times1.96=0.0041" title="\text{Margin of error}=\text{SD}\times1.96=0.0041" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Confidence&space;Interval}=[0.4959,&space;0.5041]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Confidence&space;Interval}=[0.4959,&space;0.5041]" title="\text{Confidence Interval}=[0.4959, 0.5041]" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Observed&space;fraction}=\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Observed&space;fraction}=\hat{\beta}=\frac{28,378}{38,278&plus;28,325}=0.5005" title="\text{Observed fraction}=\hat{\beta}=\frac{28,378}{38,278+28,325}=0.5005" /></a>
 - Observed fraction is within the CI - passed the check
 
 #### Click-through-probability
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{P_{pool}}=\frac{X_{control}&plus;X_{experiment}}{N_{control}&plus;N_{experiment}}=\frac{28,378&plus;28,325}{345,543&plus;344,660}=0.0822" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{P_{pool}}=\frac{X_{control}&plus;X_{experiment}}{N_{control}&plus;N_{experiment}}=\frac{28,378&plus;28,325}{345,543&plus;344,660}=0.0822" title="\hat{P_{pool}}=\frac{X_{control}+X_{experiment}}{N_{control}+N_{experiment}}=\frac{28,378+28,325}{345,543+344,660}=0.0822" /></a>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{experiment}})}=0.0007" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}&plus;\frac{1}{N_{experiment}})}=0.0007" title="SE_{pool}=\sqrt{\hat{P_{pool}}\times(1-\hat{P_{pool}})\times(\frac{1}{N_{control}}+\frac{1}{N_{experiment}})}=0.0007" /></a>
-- Margin of error:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;SE_{pool}\times1.96=0.0013" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;SE_{pool}\times1.96=0.0013" title="SE_{pool}\times1.96=0.0013" /></a>
-- Confidence Interval:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[-0.0013,&space;0.0013]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[-0.0013,&space;0.0013]" title="[-0.0013, 0.0013]" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Margin&space;of&space;error}=SE_{pool}\times1.96=0.0013" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Margin&space;of&space;error}=SE_{pool}\times1.96=0.0013" title="\text{Margin of error}=SE_{pool}\times1.96=0.0013" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Confidence&space;Interval}=[-0.0013,&space;0.0013]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Confidence&space;Interval}=[-0.0013,&space;0.0013]" title="\text{Confidence Interval}=[-0.0013, 0.0013]" /></a>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" title="\hat{d}=\hat{P_{exp}}-\hat{P_{control}}=\frac{28,325}{344,660}-\frac{28,378}{345,543}=0.0001" /></a>
 - Observed difference is within the CI - passed the check
 
+#### Summary
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Lower Bound</th>
+      <th>Upper Bound</th>
+      <th>Observed</th>
+      <th>Passes</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>Number of Cookies</td>
+    <td><p style="text-align: right">0.4988</p></td>
+    <td><p style="text-align: right">0.5012</p></td>
+    <td><p style="text-align: right">0.5006</p></td>
+    <td>✓</td>
+  </tr>
+  <tr>
+    <td>Number of Clicks</td>
+    <td><p style="text-align: right">0.4959</p></td>
+    <td><p style="text-align: right">0.5041</p></td>
+    <td><p style="text-align: right">0.5005</p></td>
+    <td>✓</td>
+  </tr>
+  <tr>
+    <td>Click-through-probability</td>
+    <td><p style="text-align: right">-0.0013</p></td>
+    <td><p style="text-align: right">0.0013</p></td>
+    <td><p style="text-align: right">0.0001</p></td>
+    <td>✓</td>
+  </tr>
+</table>
 
 ### Check for Practical and Statistical Significance
 
