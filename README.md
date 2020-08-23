@@ -1,4 +1,8 @@
-# A/B Testing Course
+# A/B Testing Notes
+
+## [Interview Questions] (https://github.com/vanessaaleung/ab-testing-notes/blob/master/interview.md)
+
+## Google's Course
 Notes for the A/B Testing course by Google
 1. [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
 2. [Metric Choice](https://github.com/vanessaaleung/ab-testing-notes/blob/master/metric-choice.md)
