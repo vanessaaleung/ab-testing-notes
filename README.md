@@ -1,6 +1,7 @@
 # A/B Testing Notes
 
-## [Interview Questions] (https://github.com/vanessaaleung/ab-testing-notes/blob/master/interview.md)
+## Interview Questions
+[Link](https://github.com/vanessaaleung/ab-testing-notes/blob/master/interview.md)
 
 ## Google's Course
 Notes for the A/B Testing course by Google
