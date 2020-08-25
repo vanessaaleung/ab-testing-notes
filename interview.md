@@ -27,3 +27,8 @@ The hypothesis that any difference in outcomes is incidental
 7. **How and when do I interpret my split test results?**
 - The early stages of a test are not the right time to start interpreting your results
 - Wait until your test has reached statistical significance
+
+8. **How to prioritize tests?**
+- Disruption of test (how much of an impact it could have to revenue)
+- Engineering lift
+- Quality of learning from tests
