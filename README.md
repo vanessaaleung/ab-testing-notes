@@ -3,6 +3,9 @@
 ## Interview Questions
 [Link](https://github.com/vanessaaleung/ab-testing-notes/blob/master/interview.md)
 
+## Spreadsheets of Tracking & Calculating Statistical Significance
+[Link](https://docs.google.com/spreadsheets/d/1JEUb5Ig5z8J4BSJhOqjz5d_A50EPfCTA1nv1qf1quos/edit?usp=sharing)
+
 ## Google's Course
 Notes for the A/B Testing course by Google
 1. [Overview](https://github.com/vanessaaleung/ab-testing-notes/blob/master/overview.md)
